@@ -1,0 +1,1490 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E6%95%B0%E5%AD%A6%E7%AE%80%E4%BB%8B/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>概率论基础 - Junounly 的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Junounly 的博客" class="md-header__button md-logo" aria-label="Junounly 的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Junounly 的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              概率论基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Junounly 的博客" class="md-nav__button md-logo" aria-label="Junounly 的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Junounly 的博客
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/%E4%B8%BB%E9%A1%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            数学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E5%AD%A6%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数学简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    概率论基础
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    概率论基础
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      前置知识
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      事件与概率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机试验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      方差与标准差
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩生成函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率不等式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概率不等式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textbfunion-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Union Bound}\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbfmarkov" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Markov}\) 不等式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbfchebyshev" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Chebyshev}\) 不等式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbfchernoff-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Chernoff Bound}\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luogu-p11918" class="md-nav__link">
+    <span class="md-ellipsis">
+      luogu P11918
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luogu-p7606" class="md-nav__link">
+    <span class="md-ellipsis">
+      luogu P7606
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      简介
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      前置知识
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      事件与概率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机试验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数学期望
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      方差与标准差
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩生成函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率不等式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概率不等式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#textbfunion-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Union Bound}\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbfmarkov" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Markov}\) 不等式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbfchebyshev" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Chebyshev}\) 不等式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textbfchernoff-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(\textbf{Chernoff Bound}\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luogu-p11918" class="md-nav__link">
+    <span class="md-ellipsis">
+      luogu P11918
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#luogu-p7606" class="md-nav__link">
+    <span class="md-ellipsis">
+      luogu P7606
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">概率论基础</h1>
+<h2 id="_2">简介</h2>
+<p>本文主要介绍部分<strong>概率论</strong> (theory of probability) 的基本概念，以及一些基础的<strong>概率不等式</strong> (probability inequality) 及证明方法，并简述其在算法竞赛中的应用。</p>
+<h2 id="_3">前置知识</h2>
+<ul>
+<li><strong>函数、和式、组合数学、导数、微积分、生成函数</strong></li>
+</ul>
+<p>如果出于学术原因阅读本文，建议先建立以上知识的基本素养再继续阅读。</p>
+<ul>
+<li><strong><span class="arithmatex">\(e^x\)</span> 与 <span class="arithmatex">\(\ln(x)\)</span> 的放缩公式</strong></li>
+</ul>
+<p>这里仅讲述本文需要用到的公式。</p>
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(e^x\)</span> 的放缩公式</p>
+<p><span class="arithmatex">\(e^x \ge x+1,\text{for all }x \ge 0\)</span></p>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>对两边同时求导，可得上式。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+e^x &amp;\ge x+1,\text{for all }x \ge 0 \\
+\Rightarrow e^x &amp;\ge 1,\text{for all }x \ge 0
+\end{aligned}
+\]</div>
+</details>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(\ln(x)\)</span> 的放缩公式</p>
+<p><span class="arithmatex">\(\ln(x+1) \ge \frac{2x}{x+2},\text{for all }x \ge 0\)</span></p>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>同理，对两边同时求导。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\ln(x+1) &amp;\ge \frac{2x}{x+2},\text{for all }x \ge 0 \\
+\Rightarrow \frac{1}{x+1} &amp;\ge \frac{4}{(x+2)^2},\text{for all }x \ge 0 \\
+\Rightarrow (x+2)^2 &amp;\ge 4(x+1),\text{for all }x \ge 0 \\
+\Rightarrow x^2 &amp;\ge 0,\text{for all }x \ge 0 \\
+\end{aligned}
+\]</div>
+</details>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(\ln(x)\)</span> 的放缩公式</p>
+<p><span class="arithmatex">\(\ln(1-x) \ge \frac{1-x}{2} - \frac{1}{2(1-x)},\text{for all } 0 \le x &lt; 1\)</span></p>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>同理，对两边同时求导。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\ln(1-x) &amp; \ge \frac{1-x}{2} - \frac{1}{2(1-x)},\text{for all } 0 \le x &lt; 1 \\
+\Rightarrow -\frac{1}{1-x} &amp; \ge -\frac{1}{2} -\frac{1}{2(1-x)^2},\text{for all } 0 \le x &lt; 1 \\
+\Rightarrow -\frac{2}{1-x} &amp;\ge -1 -\frac{1}{(1-x)^2},\text{for all } 0 \le x &lt; 1 \\
+\Rightarrow \Big (\frac{1}{1-x} \Big )^2 &amp;\ge 0,\text{for all } 0 \le x &lt; 1\\
+\end{aligned}
+\]</div>
+</details>
+<ul>
+<li><strong>部分微积分公式</strong></li>
+</ul>
+<div class="admonition quote">
+<p class="admonition-title">指数函数微分公式</p>
+<div class="arithmatex">\[\frac{\mathrm{d}}{\mathrm{d}x} e^{ax}=a e^{ax}\]</div>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>显然有</p>
+<div class="arithmatex">\[\frac{\mathrm{d}}{\mathrm{d}x} e^{ax}=\ln\big(e^a\big) \cdot e^{ax}=a e^{ax}\]</div>
+</details>
+<hr />
+<div class="admonition quote">
+<p class="admonition-title">欧拉-泊松积分（变形）</p>
+<div class="arithmatex">\[\int \limits_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \mathrm{d} x = \sqrt{2 \pi}\]</div>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>考虑将原式平方后展开：</p>
+<div class="arithmatex">\[
+\bigg (\int \limits_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \mathrm{d} x \bigg )^2 = \int \limits_{-\infty}^{\infty} \int \limits_{-\infty}^{\infty} e^{-\frac{x^2+y^2}{2}} \mathrm{d} x \mathrm{d} y
+\]</div>
+<p>三角换元，令 <span class="arithmatex">\(x=r \sin \theta,y=r \cos \theta\)</span>。</p>
+<p>构造雅可比行列式：</p>
+<div class="arithmatex">\[
+\mathcal{J}=
+\begin{pmatrix}
+\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta}\\
+\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos \theta &amp; -r \sin \theta \\
+\sin \theta &amp; r \cos \theta
+\end{pmatrix}
+\]</div>
+<p>则 <span class="arithmatex">\(\mathrm{d}x \mathrm{d}y=|\det(\mathcal{J})|\mathrm{d}r \mathrm{d} \theta=r\mathrm{d}r \mathrm{d} \theta\)</span>，即原式可以变换为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\int \limits_{0}^{2\pi} \mathrm{d} \theta \int \limits_{0}^{\infty} e^{-\frac{r^2}{2}}  r \mathrm{d} r = 2\pi \int \limits_{0}^{\infty} e^{-\frac{r^2}{2}}  r \mathrm{d} r
+\end{aligned}
+\]</div>
+<p>换元，令 <span class="arithmatex">\(u=\frac{r^2}{2}\)</span>，则 <span class="arithmatex">\(r \mathrm{d} r=\mathrm{d} u\)</span>，原式等价于：</p>
+<div class="arithmatex">\[
+2\pi \int \limits_{0}^{\infty} e^{-u} \mathrm{d} u = - 2\pi e^{-u} \bigg |_{0}^{\infty} = 2\pi
+\]</div>
+<p>由于原等式左边为正数，所以可以两边同时开平方，得到：</p>
+<div class="arithmatex">\[\int \limits_{-\infty}^{\infty} e^{-\frac{x^2}{2}} \mathrm{d} x = \sqrt{2 \pi}\]</div>
+</details>
+<h2 id="_4">基本概念</h2>
+<ul>
+<li>
+<h4 id="_5"><strong>事件与概率</strong></h4>
+</li>
+</ul>
+<p>在概率论中，<strong>概率</strong> (probability) 反映了一个<strong>事件</strong> (event) 发生的可能性大小，一个事件的概率由其包含的所有<strong>基本事件</strong> (elementary event) 确定，一般来讲，我们所讨论的事件都是基本事件。</p>
+<div class="admonition info">
+<p class="admonition-title">记号</p>
+<p>在本文中，我们将基本事件 <span class="arithmatex">\(\omega \in \Omega\)</span> 发生的概率记为 <span class="arithmatex">\(\textbf{Pr} \{ \omega \}\)</span> 或 <span class="arithmatex">\(\textbf{Pr}(\omega)\)</span>，使用花括号表示事件。</p>
+</div>
+<p>对于给定的问题，我们将可能发生并赋予概率 <span class="arithmatex">\(\textbf{Pr} ( \omega )\)</span> 的所有基本事件 <span class="arithmatex">\(\omega\)</span> 所组成的集合 <span class="arithmatex">\(\Omega\)</span> 叫做<strong>概率空间</strong> (probability space)。</p>
+<p>对于每个离散的概率空间，我们给每个基本事件 <span class="arithmatex">\(\omega\)</span> 赋予概率 <span class="arithmatex">\(\textbf{Pr}(\omega)\)</span> 后，必须满足规则：</p>
+<div class="admonition note">
+<p class="admonition-title">规则</p>
+<p><span class="arithmatex">\(\textbf{Pr}(\omega) \ge 0, \text{for all } \omega \in \Omega\)</span></p>
+<p><span class="arithmatex">\(\sum \limits_{\omega \in \Omega} \textbf{Pr}(\omega) = 1\)</span></p>
+</div>
+<p>即总概率值恒为 <span class="arithmatex">\(1\)</span>。</p>
+<ul>
+<li>
+<h4 id="_6"><strong>随机试验</strong></h4>
+</li>
+</ul>
+<p><strong>随机试验</strong> (random experiment) 是在相同条件下对某随机现象进行的大量重复观测。</p>
+<p>一个随机试验 <span class="arithmatex">\(E\)</span> 的所有可能结果的集合称为<strong>样本空间</strong> (sample space)。试验的每一个可能结果称为<strong>样本点</strong> (sample point)。</p>
+<ul>
+<li>
+<h4 id="_7"><strong>随机变量</strong></h4>
+</li>
+</ul>
+<p>设随机试验 <span class="arithmatex">\(E\)</span> 的样本空间为 <span class="arithmatex">\(\Omega\)</span>，对于每一个样本点 <span class="arithmatex">\(\omega\)</span>，都有唯一的实数 <span class="arithmatex">\(X(\omega)\)</span>
+与之对应，且对于任意实数 <span class="arithmatex">\(x\)</span>，事件 <span class="arithmatex">\(\{ \omega | X(\omega) \le x \}\)</span> 都有确定的概率 <span class="arithmatex">\(\textbf{Pr} \{ \omega | X(\omega) \le x \}\)</span> 与之对应，则称 <span class="arithmatex">\(X(\omega)\)</span> 为<strong>随机变量</strong> (random variable)，记为 <span class="arithmatex">\(X\)</span>。</p>
+<p>不难发现，<span class="arithmatex">\(X\)</span> 是一个定义在 <span class="arithmatex">\(\Omega\)</span> 上的单值函数 <span class="arithmatex">\(X=X(\omega)\)</span>。</p>
+<p>随机变量分为<strong>离散型随机变量</strong>和<strong>连续型随机变量</strong>。顾名思义，分别代表着其值域 <span class="arithmatex">\(\Omega\)</span> 是离散的或连续的。</p>
+<div class="admonition info">
+<p class="admonition-title">记号</p>
+<p>根据离散型随机变量 <span class="arithmatex">\(X\)</span> 的分布律，记 <span class="arithmatex">\(p_k\)</span> 为 <span class="arithmatex">\(\textbf{Pr} \{ X=x_k \}\)</span>，其中 <span class="arithmatex">\(k \in \mathbb{N}^+\)</span>。</p>
+<p>对于连续型随机变量 <span class="arithmatex">\(X\)</span>，记其<strong>概率密度</strong> (probability density) 函数为 <span class="arithmatex">\(f_X(x)=\textbf{Pr} \{ X=x \}\)</span>。</p>
+</div>
+<ul>
+<li>
+<h4 id="_8"><strong>数学期望</strong></h4>
+</li>
+</ul>
+<p>随机变量 <span class="arithmatex">\(X\)</span> 的<strong>数学期望</strong> (expected value) 为其取值被概率加权后的和，简称期望，记为 <span class="arithmatex">\(\mu\)</span> 或 <span class="arithmatex">\(\mathbb{E}(X)\)</span>。可以理解为一种<strong>加权平均</strong> (weighted average)。</p>
+<div class="admonition abstract">
+<p class="admonition-title">定义</p>
+<p>对于离散型随机变量 <span class="arithmatex">\(X\)</span>，其数学期望为 <span class="arithmatex">\(\sum \limits_{k=1}^{\infty} x_kp_k\)</span>。</p>
+<p>对于连续型随机变量 <span class="arithmatex">\(X\)</span>，其数学期望为 <span class="arithmatex">\(\int \limits_{-\infty}^{\infty} xf_X(x) \mathrm{d} x\)</span>。</p>
+</div>
+<p>当然，积分式更为一般化，离散型随机变量也可以用上述积分式表达，所以以下的一些推导会直接采用积分式。</p>
+<p>期望能够描述随机变量平均取值的大小。</p>
+<ul>
+<li>
+<h4 id="_9"><strong>方差与标准差</strong></h4>
+</li>
+</ul>
+<p>随机变量 <span class="arithmatex">\(X\)</span> 的<strong>方差</strong> (variance) 描述了随机变量的取值与其数学期望的偏离程度，记为 <span class="arithmatex">\(\sigma^2\)</span> 或 <span class="arithmatex">\(\mathrm{Var}(X)\)</span>。</p>
+<p>记随机变量 <span class="arithmatex">\(X\)</span> 的期望为 <span class="arithmatex">\(\mu\)</span>。</p>
+<div class="admonition abstract">
+<p class="admonition-title">定义</p>
+<p>若 <span class="arithmatex">\(X\)</span> 为离散型随机变量，其方差为 <span class="arithmatex">\(\sum \limits_{k=1}^{\infty} (x_k-\mu)^2 p_k\)</span>。</p>
+<p>若 <span class="arithmatex">\(X\)</span> 为连续型随机变量，其方差为 <span class="arithmatex">\(\int \limits_{-\infty}^{\infty} (x-\mu)^2 f_X(x) \mathrm{d} x\)</span>。</p>
+</div>
+<p>与期望同理，以下的一些推导会直接采用积分式。</p>
+<p>根据定义，容易推导出期望与方差的数量关系：</p>
+<div class="arithmatex">\[\text{Var}(X)=\mathbb{E}\big ( (X-\mu)^2 \big )=\mathbb{E}\big(X^2\big)-\big (\mathbb{E}(X) \big )^2\]</div>
+<p>我们有时会引入<strong>标准差</strong> (standard deviation)，记为 <span class="arithmatex">\(\sigma\)</span>，满足 <span class="arithmatex">\(\sigma=\sqrt{\mathrm{Var}(x)}\)</span>。</p>
+<ul>
+<li>
+<h4 id="_10"><strong>概率分布</strong></h4>
+</li>
+</ul>
+<p><strong>概率分布</strong> (probability distribution) 指的是用于表述随机变量取值的概率规律。</p>
+<p>概率分布能够刻画随机变量取值规律的概率测度。</p>
+<ul>
+<li><strong><span class="arithmatex">\(\textbf{Bernoulli}\)</span> 分布</strong></li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">定义</p>
+<p>对于随机试验 <span class="arithmatex">\(E\)</span> 中的随机变量 <span class="arithmatex">\(X\)</span>，若其值域 <span class="arithmatex">\(D=\{ x_1=1,x_2=0 \}\)</span>，且 <span class="arithmatex">\(p_1=p,p_2=1-p\)</span>，则称 <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\(p\)</span> 的 <span class="arithmatex">\(\text{Bernoulli}\)</span> 分布，记为 <span class="arithmatex">\(X \sim \text{B}(1,p)\)</span>。</p>
+</div>
+<p>其中满足以上条件的随机试验 <span class="arithmatex">\(E\)</span> 被称作 <strong><span class="arithmatex">\(\textbf{Bernoulli}\)</span> 试验</strong>，其中 <span class="arithmatex">\(X=1\)</span> 代表试验成功。</p>
+<ul>
+<li><strong>二项分布</strong></li>
+</ul>
+<p><strong>二项分布</strong> (binomial distribution) 描述了一系列独立重复的 <span class="arithmatex">\(\text{Bernoulli}\)</span> 试验的成功次数的概率分布，是 <span class="arithmatex">\(\text{Bernoulli}\)</span> 分布的一般化。</p>
+<div class="admonition abstract">
+<p class="admonition-title">定义</p>
+<p>考虑 <span class="arithmatex">\(n\)</span> 次独立重复，且每次都有 <span class="arithmatex">\(p\)</span> 的概率成功的 <span class="arithmatex">\(\text{Bernoulli}\)</span> 试验：</p>
+<p>对于随机变量 <span class="arithmatex">\(X\)</span>，若所有 <span class="arithmatex">\(0 \le k \le n\)</span> 的整数 <span class="arithmatex">\(k\)</span> 都满足 <span class="arithmatex">\(\{ X=k \}\)</span> 等价于 <span class="arithmatex">\(\{n\)</span> 次 <span class="arithmatex">\(\text{Bernoulli}\)</span> 试验中有 <span class="arithmatex">\(k\)</span> 次成功<span class="arithmatex">\(\}\)</span>，那么称 <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(p\)</span> 的二项分布，记为 <span class="arithmatex">\(X \sim \text{B}(n,p)\)</span>。</p>
+<p>形式化地，若离散型随机变量 <span class="arithmatex">\(X\)</span> 的分布律满足</p>
+<div class="arithmatex">\[\textbf{Pr}(X=k)= \binom{n}{k} p^k (1-p)^{n-k}\]</div>
+<p>时，那么称 <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(p\)</span> 的二项分布。</p>
+</div>
+<p>当 <span class="arithmatex">\(n=1\)</span> 时，二项分布为 <span class="arithmatex">\(\text{Bernoulli}\)</span> 分布。</p>
+<p>容易发现，二者都是离散型随机变量的概率分布。</p>
+<ul>
+<li><strong>正态分布</strong></li>
+</ul>
+<p><strong>正态分布</strong> (normal distribution) 是一种连续型随机变量的概率分布。</p>
+<div class="admonition abstract">
+<p class="admonition-title">定义</p>
+<p>若连续型随机变量 <span class="arithmatex">\(X\)</span> 的概率密度函数为</p>
+<div class="arithmatex">\[f_X(x)= \frac{1}{\sqrt{2 \pi} \sigma} e ^ {-\frac{(x-\mu)^2}{2\sigma^2}}\]</div>
+<p>其中 <span class="arithmatex">\(\sigma&gt;0\)</span>，则称 <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\(\mu\)</span> 和 <span class="arithmatex">\(\sigma^2\)</span> 的正态分布，记为 <span class="arithmatex">\(X \sim \text{N}\big(\mu,\sigma^2\big)\)</span>。</p>
+</div>
+<p>现实世界中许多事物往往符合正态分布。</p>
+<ul>
+<li>
+<h4 id="_11"><strong>矩生成函数</strong></h4>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">定义</p>
+<p>对于随机变量 <span class="arithmatex">\(X\)</span> 与随机数 <span class="arithmatex">\(s\)</span>，定义 <span class="arithmatex">\(X\)</span> 的<strong>矩生成函数</strong> (moment generating function) 为：</p>
+<div class="arithmatex">\[M_X(s)=\mathbb{E}\big(e^{sX}\big)\]</div>
+</div>
+<p>将期望展开，可得：</p>
+<div class="admonition note">
+<p class="admonition-title">定义的推论</p>
+<p>若 <span class="arithmatex">\(X\)</span> 为离散型随机变量，其矩生成函数为 <span class="arithmatex">\(\sum \limits_{k=1}^{\infty} e^{sx_k} p_k\)</span>。</p>
+<p>若 <span class="arithmatex">\(X\)</span> 为连续型随机变量，其矩生成函数为 <span class="arithmatex">\(\int \limits_{-\infty}^{\infty} e^{sx} f_X(x) \mathrm{d} x\)</span>。</p>
+</div>
+<p>需要注意的是，生成函数 <span class="arithmatex">\(M_X(s)\)</span> 是关于随机数 <span class="arithmatex">\(s\)</span> 的函数，并不是随机变量 <span class="arithmatex">\(X\)</span>。</p>
+<p>矩生成函数有良好的性质，对其微分，根据前面讲的微分公式可得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d} s} M_X(s)&amp;=\int \limits_{-\infty}^{\infty} \frac{\mathrm{d}}{\mathrm{d} s} e^{sx} f_X(x) \mathrm{d} x
+\\
+&amp;=\int \limits_{-\infty}^{\infty} x e^{sx} f_X(x) \mathrm{d} x
+\end{aligned} \\
+\]</div>
+<p>取 <span class="arithmatex">\(s=0\)</span>，得：</p>
+<div class="arithmatex">\[\int \limits_{-\infty}^{\infty} x e^{sx} f_X(x) \mathrm{d} x = \int \limits_{-\infty}^{\infty} x  f_X(x) \mathrm{d} x=\mathbb{E}(X)\]</div>
+<p>故 <span class="arithmatex">\(X\)</span> 的矩生成函数在 <span class="arithmatex">\(s=0\)</span> 处的导数恰为 <span class="arithmatex">\(X\)</span> 的期望 <span class="arithmatex">\(\mathbb{E}(X)\)</span>。</p>
+<p>下面通过举例讲解矩生成函数的求法，此处我们选择使用刚才介绍的三种概率分布作为例子。</p>
+<p>根据矩生成函数的定义可得：</p>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(\text{Bernoulli}\)</span> 分布的矩生成函数</p>
+<p>对于 <span class="arithmatex">\(X \sim \mathrm{B}(1,p)\)</span>，其矩生成函数为</p>
+<div class="arithmatex">\[M_X(s)=\mathbb{E}\big(e^{sX}\big)=p \cdot e^s + 1-p\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">二项分布的矩生成函数</p>
+<p>对于 <span class="arithmatex">\(X \sim \mathrm{B}(n,p)\)</span>，其矩生成函数为</p>
+<div class="arithmatex">\[M_X(s)=\mathbb{E}\big(e^{sX}\big)=\big(p \cdot e^s + 1-p\big)^n\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">正态分布的矩生成函数</p>
+<p>对于 <span class="arithmatex">\(X \sim \mathrm{N}(\mu,\sigma^2)\)</span>，其矩生成函数为</p>
+<div class="arithmatex">\[\begin{aligned}M_X(s) &amp; =\mathbb{E}\big(e^{sX}\big) \\&amp; = \int \limits_{-\infty}^{\infty} e^{sx} f_X(x) \mathrm{d} x \\&amp; = \frac{1}{\sqrt{2 \pi} \sigma} \int \limits_{-\infty}^{\infty} e^{sx-\frac{(x-\mu)^2}{2\sigma^2}} \mathrm{d} x\end{aligned}\]</div>
+<p>换元，令 <span class="arithmatex">\(u=\frac{x-\mu}{\sigma}\)</span>，则 <span class="arithmatex">\(\frac{\mathrm{d}x}{\sigma}=\mathrm{d}u\)</span>，代入得：</p>
+<div class="arithmatex">\[\begin{aligned}\frac{1}{\sqrt{2 \pi} \sigma} \int \limits_{-\infty}^{\infty} e^{sx-\frac{(x-\mu)^2}{2\sigma^2}} \mathrm{d} x &amp; =\frac{1}{\sqrt{2 \pi}} \int \limits_{-\infty}^{\infty} e^{s(\sigma u + \mu)-\frac{u^2}{2}} \mathrm{d} u \\&amp; = \frac{e^{s\mu}}{\sqrt{2 \pi}} \int \limits_{-\infty}^{\infty} e^{s \sigma u-\frac{u^2}{2}} \mathrm{d} u \\&amp; = \frac{e^{s\mu}}{\sqrt{2 \pi}} \int \limits_{-\infty}^{\infty} e^{-\frac{(u-s\sigma)^2-s^2\sigma^2}{2}} \mathrm{d} u \\&amp; = \frac{e^{s\mu+ \frac{s^2\sigma^2}{2} }}{\sqrt{2 \pi}} \int \limits_{-\infty}^{\infty} e^{-\frac{(u-s\sigma)^2}{2}} \mathrm{d} u\end{aligned}\]</div>
+<p>换元，令 <span class="arithmatex">\(v=u-s\sigma\)</span>，代入得：</p>
+<div class="arithmatex">\[\frac{e^{s\mu+ \frac{s^2\sigma^2}{2} }}{\sqrt{2 \pi}} \int \limits_{-\infty}^{\infty} e^{-\frac{(u-s\sigma)^2}{2}} \mathrm{d} u = \frac{e^{s\mu+ \frac{s^2\sigma^2}{2} }}{\sqrt{2 \pi}} \int \limits_{-\infty}^{\infty} e^{-\frac{v^2}{2}} \mathrm{d} v\]</div>
+<p>由前面讲的积分公式得</p>
+<div class="arithmatex">\[\int \limits_{-\infty}^{\infty} e^{-\frac{v^2}{2}} \mathrm{d} v=\sqrt{2\pi}\]</div>
+<p>代入即</p>
+<div class="arithmatex">\[M_X(s)=e^{s\mu+ \frac{s^2\sigma^2}{2} }\]</div>
+</div>
+<h2 id="_12">概率不等式</h2>
+<ul>
+<li>
+<h4 id="textbfunion-bound"><strong><span class="arithmatex">\(\textbf{Union Bound}\)</span></strong></h4>
+</li>
+</ul>
+<p>又叫 <strong><span class="arithmatex">\(\textbf{Boole}\)</span> 不等式</strong>，描述了一组互相约束事件的发生概率与互相独立的单一事件的发生概率的关系。</p>
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(\text{Union Bound}\)</span></p>
+<p>对于 <span class="arithmatex">\(n\)</span> 个事件 <span class="arithmatex">\(A_1,A_2,\ldots,A_n\)</span>，有：</p>
+<div class="arithmatex">\[\textbf{Pr} \bigg ( \bigcup \limits_{k=1}^{n} A_k \bigg ) \le \sum \limits_{k=1}^{n} \textbf{Pr}(A_k)\]</div>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>考虑数学归纳法，对于 <span class="arithmatex">\(n=1\)</span>，</p>
+<div class="arithmatex">\[\textbf{Pr}(A_1) \le \textbf{Pr}(A_1)\]</div>
+<p>是显然的。对于一个满足该条件的 <span class="arithmatex">\(n\)</span>，由</p>
+<div class="arithmatex">\[\textbf{Pr}(A \cup B) = \textbf{Pr}(A) + \textbf{Pr}(B) - \textbf{Pr}(A \cap B)\]</div>
+<p>可知，</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\textbf{Pr} \bigg ( \bigcup \limits_{k=1}^{n+1} A_k \bigg ) &amp; = \textbf{Pr}\bigg ( \bigcup \limits_{k=1}^{n} A_k \bigg ) + \textbf{Pr}(A_{n+1}) - \textbf{Pr} \bigg ( \big ( \bigcup \limits_{k=1}^{n} A_k \big ) \cap A_{n+1} \bigg ) \\
+&amp; \le \textbf{Pr}\bigg ( \bigcup \limits_{k=1}^{n} A_k \bigg ) + \textbf{Pr}(A_{n+1}) \\
+&amp; \le \bigg ( \sum \limits_{k=1}^{n} \textbf{Pr}(A_k) \bigg ) + \textbf{Pr}(A_{n+1}) \\
+&amp; = \sum \limits_{k=1}^{n+1} \textbf{Pr}(A_k)
+\end{aligned}
+\]</div>
+<p>故原不等式成立。</p>
+</details>
+<p>该不等式的意义是：一组事件中，至少有一件发生的概率小于等于所有事件发生的概率之和。</p>
+<ul>
+<li>
+<h4 id="textbfmarkov"><strong><span class="arithmatex">\(\textbf{Markov}\)</span> 不等式</strong></h4>
+</li>
+</ul>
+<p>本质：对于一个非负随机变量 <span class="arithmatex">\(X\)</span>，感受一下，其与 <span class="arithmatex">\(\mathbb{E}(x)\)</span> 相比时很大的概率是很小的。</p>
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(\text{Markov}\)</span> 不等式</p>
+<p>对于非负随机变量 <span class="arithmatex">\(X\)</span>，我们有：</p>
+<div class="arithmatex">\[\textbf{Pr}(X \ge a) \le \frac{\mathbb{E}(X)}{a},\text{for all } a &gt; 0\]</div>
+</div>
+<details class="note">
+<summary>证明 <span class="arithmatex">\(\text{I}\)</span></summary>
+<p>构造离散型随机变量 <span class="arithmatex">\(Y_a\)</span>，满足：</p>
+<div class="arithmatex">\[Y_a =
+\begin{cases}
+0, &amp; \text{if } X &lt; a \\
+a, &amp; \text{if } X \ge a
+\end{cases}\]</div>
+<p>根据期望的定义，</p>
+<div class="arithmatex">\[\mathbb{E}(Y_a)=\textbf{Pr}(X \ge a) \cdot a\]</div>
+<p>我们构造的 <span class="arithmatex">\(Y_a\)</span> 有性质 <span class="arithmatex">\(Y_a \le X\)</span>，所以 <span class="arithmatex">\(\mathbb{E}(Y_a) \le \mathbb{E}(X)\)</span>，代入得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\textbf{Pr}(X \ge a) \cdot a &amp; \le \mathbb{E}(X) \\
+\textbf{Pr}(X \ge a) &amp; \le \frac{\mathbb{E}(X)}{a},\text{for all } a &gt; 0
+\end{aligned}
+\]</div>
+</details>
+<details class="note">
+<summary>证明 <span class="arithmatex">\(\text{II}\)</span></summary>
+<p>考虑期望的积分形式，</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\mathbb{E}(X)}{a} &amp; = \frac{1}{a} \int \limits_{0}^{\infty} xf_X(x) \mathrm{d} x \\
+&amp; \ge \frac{1}{a} \int \limits_{a}^{\infty} af_X(x) \mathrm{d} x ,\text{for all } a &gt; 0 \\
+&amp; = \int \limits_{a}^{\infty} f_X(x) \mathrm{d} x ,\text{for all } a &gt; 0 \\
+&amp; = \textbf{Pr}(X \ge a) ,\text{for all } a &gt; 0
+\end{aligned}
+\]</div>
+<p>即为原式。</p>
+</details>
+<p>将 <span class="arithmatex">\(X=-X^{\prime}\)</span> 代入，一般化地，我们还可以得到 <span class="arithmatex">\(\text{Markov}\)</span> 不等式在 <span class="arithmatex">\(X\)</span> 为非正随机变量时的形式：</p>
+<div class="arithmatex">\[\textbf{Pr}(X^{\prime} \le -a) \le \frac{\mathbb{E}(-X^{\prime})}{a},\text{for all } a &gt; 0\]</div>
+<ul>
+<li>
+<h4 id="textbfchebyshev"><strong><span class="arithmatex">\(\textbf{Chebyshev}\)</span> 不等式</strong></h4>
+</li>
+</ul>
+<p>可以看到的是，<span class="arithmatex">\(\text{Markov}\)</span> 不等式仅利用了期望这一信息，考虑把方差加入不等式的限制中。</p>
+<p>对于一个随机变量 <span class="arithmatex">\(X\)</span>，观察到其在 <span class="arithmatex">\(\text{Var}(x)\)</span> 较小时与 <span class="arithmatex">\(\mathbb{E}(x)\)</span> 差值很大的概率是很小的。</p>
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(\text{Chebyshev}\)</span> 不等式</p>
+<p>对于数学期望为 <span class="arithmatex">\(\mu\)</span>，方差为 <span class="arithmatex">\(\sigma^2\)</span> 的随机变量 <span class="arithmatex">\(X\)</span>，我们有：</p>
+<div class="arithmatex">\[\textbf{Pr}\big(|X - \mu| \ge \varepsilon\big) \le \frac{\sigma^2}{\varepsilon^2},\text{for all } \varepsilon &gt; 0\]</div>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>考虑 <span class="arithmatex">\(\text{Markov}\)</span> 不等式：</p>
+<div class="arithmatex">\[\textbf{Pr}(X^{\prime} \ge a) \le \frac{\mathbb{E}(X^{\prime})}{a},\text{for all } a &gt; 0\]</div>
+<p>将 <span class="arithmatex">\(X^{\prime}=(X - \mu)^2,a=\varepsilon^2\)</span> 代入，此时能够保证 <span class="arithmatex">\(X^{\prime}\)</span> 非负且 <span class="arithmatex">\(a&gt;0\)</span>：</p>
+<div class="arithmatex">\[\textbf{Pr}\big ((X - \mu)^2 \ge \varepsilon^2 \big ) \le \frac{\mathbb{E}\big ( (X - \mu)^2\big )}{\varepsilon^2}\]</div>
+<p>左边开平方，</p>
+<div class="arithmatex">\[\textbf{Pr}\big (|X - \mu| \ge \varepsilon \big ) \le \frac{\mathbb{E}\big ( (X - \mu)^2\big )}{\varepsilon^2}\]</div>
+<p>由期望与方差的关系得，</p>
+<div class="arithmatex">\[\textbf{Pr}\big (|X - \mu| \ge \varepsilon \big ) \le \frac{\sigma^2}{\varepsilon^2}\]</div>
+</details>
+<p>取 <span class="arithmatex">\(\varepsilon=k\sigma\)</span>，即 <span class="arithmatex">\(k\)</span> 倍标准差时，可以得到 <span class="arithmatex">\(\text{Chebyshev}\)</span> 不等式的另一种形式：</p>
+<div class="arithmatex">\[\textbf{Pr}\big (|X - \mu| \ge k \sigma \big ) \le \frac{\sigma^2}{k^2\sigma^2}=\frac{1}{k^2}\]</div>
+<p>继续对 <span class="arithmatex">\(\text{Chebyshev}\)</span> 不等式进行推广，考虑 <span class="arithmatex">\(n\)</span> 个独立的随机变量 <span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>，其中 <span class="arithmatex">\(X_k\)</span> 的期望为 <span class="arithmatex">\(\mu_k\)</span>，方差为 <span class="arithmatex">\(\sigma_k^2\)</span>。</p>
+<p>代入</p>
+<div class="arithmatex">\[X=\sum \limits_{k=1}^{n} X_k,\mu=\sum \limits_{k=1}^{n} \mu_k,\sigma^2=\sum \limits_{k=1}^{n} \sigma_k^2\]</div>
+<p>就得到了<strong>弱大数定律</strong> (weak law of large numbers)。</p>
+<div class="admonition quote">
+<p class="admonition-title">弱大数定律</p>
+<p>对于 <span class="arithmatex">\(n\)</span> 个独立的随机变量 <span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>，令 <span class="arithmatex">\(X_k\)</span> 的期望为 <span class="arithmatex">\(\mu_k\)</span>，方差为 <span class="arithmatex">\(\sigma_k^2\)</span>，则有：</p>
+<div class="arithmatex">\[\textbf{Pr}\bigg (|\sum \limits_{k=1}^{n} X_k - \sum \limits_{k=1}^{n} \mu_k| \ge \varepsilon \bigg ) \le \frac{\sum \limits_{k=1}^{n} \sigma_k^2}{\varepsilon^2}\]</div>
+</div>
+<ul>
+<li>
+<h4 id="textbfchernoff-bound"><strong><span class="arithmatex">\(\textbf{Chernoff Bound}\)</span></strong></h4>
+</li>
+</ul>
+<p>我们可以利用前面所讲的矩生成函数来确定概率的范围。</p>
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(\textbf{Chernoff Bound}\)</span></p>
+<p>对于非负随机变量 <span class="arithmatex">\(X\)</span>，我们有：</p>
+<div class="arithmatex">\[\textbf{Pr}(X \ge a) \le e^{-sa} M_X(s),\text{for all }s&gt;0\]</div>
+<div class="arithmatex">\[\textbf{Pr}(X \le a) \le e^{-sa} M_X(s),\text{for all }s&gt;0\]</div>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>由指数函数的性质，易得以下结论：</p>
+<div class="arithmatex">\[\textbf{Pr}(X \ge a) = \textbf{Pr}(e^{sX} \ge e^{sa}),\text{for all }s&gt;0\]</div>
+<div class="arithmatex">\[\textbf{Pr}(X \le a) = \textbf{Pr}(e^{sX} \ge e^{sa}),\text{for all } s&lt;0\]</div>
+<p>考虑对上述式子代入 <span class="arithmatex">\(\text{Markov}\)</span> 不等式，并将矩生成函数代入：</p>
+<div class="arithmatex">\[\textbf{Pr}(e^{sX} \ge e^{sa}) \le \frac{\mathbb{E}\big(e^{sX}\big)}{e^{sa}}= e^{-sa} M_X(s)\]</div>
+<p>代回原式，即得结论。</p>
+</details>
+<p>根据这一不等式，我们可以在一些特殊条件下，用期望确定一系列随机变量之和的概率分布的限制。</p>
+<p>考虑 <span class="arithmatex">\(n\)</span> 个随机变量 <span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>，其中 <span class="arithmatex">\(X_i \sim \text{B}(1,p_i)\)</span>。</p>
+<p>对于这样的情况，此时 <span class="arithmatex">\(\text{Chernoff Bound}\)</span> 的推论被称为 <strong><span class="arithmatex">\(\textbf{Multiplicative Chernoff Bound}\)</span></strong>。</p>
+<div class="admonition quote">
+<p class="admonition-title"><span class="arithmatex">\(\textbf{Multiplicative Chernoff Bound}\)</span></p>
+<p>对于 <span class="arithmatex">\(n\)</span> 个随机变量 <span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>，其中 <span class="arithmatex">\(X_i \sim \text{B}(1,p_i)\)</span>，令 <span class="arithmatex">\(X=\sum \limits_{k=1}^{n} X_i,\mu=\mathbb{E}(X)=\sum \limits_{k=1}^{n} p_i\)</span>，我们有：</p>
+<p><strong>Upper Bound :</strong></p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \ge (1+\varepsilon) \mu \big) \le e^{-\frac{\varepsilon^2 \mu}{\varepsilon +2}},\text{for all } \varepsilon &gt; 0\]</div>
+<p><strong>Lower Tail :</strong></p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \le (1-\varepsilon) \mu \big) \le e^{-\frac{\varepsilon^2 \mu}{2}},\text{for all } \varepsilon &gt; 0\]</div>
+</div>
+<details class="note">
+<summary>证明</summary>
+<p>对于 <strong>Lower Tail</strong>，若 <span class="arithmatex">\(\varepsilon \ge 1\)</span>，由于 <span class="arithmatex">\(X \ge 0\)</span>，不等式左边值为 <span class="arithmatex">\(0\)</span>，所以不等式一定成立，只需讨论 <span class="arithmatex">\(0 &lt; \varepsilon &lt; 1\)</span> 的情况。</p>
+<p>分别令 <span class="arithmatex">\(a\)</span> 为 <span class="arithmatex">\((1+\varepsilon) \mu\)</span> 和 <span class="arithmatex">\((1-\varepsilon) \mu\)</span>，代入 <span class="arithmatex">\(\text{Chernoff Bound}\)</span>，得：</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \ge (1+\varepsilon) \mu\big) \le e^{-(1+\varepsilon)s \mu} M_X(s),\text{for all }\varepsilon,s&gt;0\]</div>
+<div class="arithmatex">\[\textbf{Pr}\big(X \le (1-\varepsilon) \mu\big) \le e^{-(1-\varepsilon) s \mu} M_X(s),\text{for all }0&lt;\varepsilon&lt;1,s&lt;0\]</div>
+<p>考虑利用期望的性质，用 <span class="arithmatex">\(M_{X_k}(s)\)</span> 表示出 <span class="arithmatex">\(M_X(s)\)</span>：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+M_X(s) &amp; = \mathbb{E}\big(e^{sX}\big) = \mathbb{E}\big(e^{s \sum \limits_{k=1}^{n} X_k}\big) \\
+&amp; = \mathbb{E}\bigg(\prod \limits_{k=1}^{n} e^{s X_k}\bigg) = \prod \limits_{k=1}^{n} \mathbb{E}\big( e^{s X_k}\big) \\
+&amp; = \prod \limits_{k=1}^{n} M_{X_k}(s)
+\end{aligned}
+\]</div>
+<p>代入前面讲的 <span class="arithmatex">\(\text{Bernoulli}\)</span> 分布的矩生成函数，得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\prod \limits_{k=1}^{n} M_{X_k}(s) &amp; = \prod \limits_{k=1}^{n} p_i \cdot e^{s} + 1-p_i \\
+&amp; = \prod \limits_{k=1}^{n} p_i \big(e^{s}-1\big) + 1 \\
+\end{aligned}
+\]</div>
+<p>代入前面讲的指数函数 <span class="arithmatex">\(e^x\)</span> 的放缩公式，得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\prod \limits_{k=1}^{n} p_i \big(e^{s}-1\big) + 1 &amp; \le \prod \limits_{k=1}^{n} e^{p_i (e^{s}-1)} \\
+&amp; = e^{\sum \limits_{k=1}^{n} p_i e^{(e^{s}-1)}} \\
+&amp; = e^{(e^{s}-1) \mu} \\
+\end{aligned}
+\]</div>
+<p>即 <span class="arithmatex">\(M_X(s)=e^{\mu (e^{s}-1)}\)</span>，代回原式：</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \ge (1+\varepsilon) \mu\big) \le e^{(e^{s}-1-(1+\varepsilon)s) \mu} ,\text{for all }\varepsilon,s&gt;0\]</div>
+<div class="arithmatex">\[\textbf{Pr}\big(X \le (1-\varepsilon) \mu\big) \le e^{(e^{s}-1-(1-\varepsilon)s) \mu},\text{for all }0&lt;\varepsilon&lt;1,s&lt;0\]</div>
+<p>对于 <strong>Upper Bound</strong>，取 <span class="arithmatex">\(s=\ln(1+\varepsilon)\)</span>，此时满足 <span class="arithmatex">\(s&gt;0\)</span>：</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \ge (1+\varepsilon) \mu\big) \le \bigg (\frac{e^{\varepsilon}}{(1+\varepsilon)^{1+\varepsilon}} \bigg )^ {\mu},\text{for all }\varepsilon&gt;0\]</div>
+<p>对不等式右侧取对数，得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\ln  \bigg (\frac{e^{\varepsilon}}{(1+\varepsilon)^{1+\varepsilon}} \bigg )^ {\mu} &amp; =\mu \ln \frac{e^{\varepsilon}}{(1+\varepsilon)^{1+\varepsilon}} \\
+&amp; = \mu \big (\varepsilon-(1+\varepsilon)\ln (1+\varepsilon) \big )
+\end{aligned}
+\]</div>
+<p>代入前面讲的对数函数 <span class="arithmatex">\(\ln(x)\)</span> 的放缩公式，得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mu \big (\varepsilon-(1+\varepsilon)\ln (1+\varepsilon) \big ) &amp; \le \mu \Big (\varepsilon-\frac{2\varepsilon^2+2\varepsilon}{\varepsilon +2} \Big ) \\
+&amp; = - \frac{\varepsilon^2 \mu}{\varepsilon +2}
+\end{aligned}
+\]</div>
+<p>代回原式，即</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \ge (1+\varepsilon) \mu\big) \le e^{- \frac{\varepsilon^2 \mu}{\varepsilon +2} },\text{for all }\varepsilon&gt;0\]</div>
+<p>对于 <strong>Lower Tail</strong>，取 <span class="arithmatex">\(s=\ln(1-\varepsilon)\)</span>，此时满足 <span class="arithmatex">\(s&lt;0\)</span>：</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \le (1-\varepsilon) \mu\big) \le \bigg (\frac{e^{-\varepsilon}}{(1-\varepsilon)^{1-\varepsilon}} \bigg )^ {\mu},\text{for all }0&lt;\varepsilon&lt;1\]</div>
+<p>对不等式右侧取对数，得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\ln  \bigg (\frac{e^{-\varepsilon}}{(1-\varepsilon)^{1-\varepsilon}} \bigg )^ {\mu} &amp; =\mu \ln \frac{e^{-\varepsilon}}{(1-\varepsilon)^{1-\varepsilon}} \\
+&amp; = \mu \big (-\varepsilon-(1-\varepsilon)\ln (1-\varepsilon) \big )
+\end{aligned}
+\]</div>
+<p>代入前面讲的对数函数 <span class="arithmatex">\(\ln(x)\)</span> 的放缩公式，得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mu \big (-\varepsilon-(1-\varepsilon)\ln (1-\varepsilon) \big ) &amp; \le \mu \Big ( -\varepsilon - \frac{(1-\varepsilon)^2}{2} + \frac{1}{2} \Big) \\
+&amp; = - \frac{\varepsilon^2 \mu}{2}
+\end{aligned}
+\]</div>
+<p>代回原式，即</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \le (1-\varepsilon) \mu \big) \le e^{-\frac{\varepsilon^2 \mu}{2}},\text{for all } 0 &lt; \varepsilon &lt; 1\]</div>
+<p>结合一下一开始的结论，最终得到：</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \ge (1+\varepsilon) \mu\big) \le e^{- \frac{\varepsilon^2 \mu}{\varepsilon +2} },\text{for all }\varepsilon&gt;0\]</div>
+<div class="arithmatex">\[\textbf{Pr}\big(X \le (1-\varepsilon) \mu \big) \le e^{-\frac{\varepsilon^2 \mu}{2}},\text{for all } \varepsilon &gt; 0\]</div>
+</details>
+<p>容易发现，二项分布的条件是强于该结论的前提条件的，所以该结论也可以在服从二项分布的问题中运用。</p>
+<h2 id="_13">应用</h2>
+<p>本文主要通过列举概率论在具体题目中应用的例子，来阐释概率论在算法竞赛中的应用。</p>
+<ul>
+<li>
+<h4 id="luogu-p11918">luogu P11918</h4>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">题目链接</p>
+<p><a href="https://www.luogu.com.cn/problem/P11918">P11918 [PA 2025] 考试 / Egzamin</a></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">简要题意</p>
+<p>有 <span class="arithmatex">\(n\)</span> 个随机变量 <span class="arithmatex">\(X_1,X_2,\ldots,X_n\)</span>，其中 <span class="arithmatex">\(X_i\)</span> 有 <span class="arithmatex">\(p_i\)</span> 的概率为 <span class="arithmatex">\(1\)</span>，否则为 <span class="arithmatex">\(-1\)</span>。你选择一个 <span class="arithmatex">\(k\)</span>，再选择其中的 <span class="arithmatex">\(k\)</span> 个随机变量，求最优决策下你选择的随机变量的和 <span class="arithmatex">\(\ge t\)</span> 的概率。</p>
+<p><span class="arithmatex">\(1 \le t \le n \le 50000\)</span>，误差在 <span class="arithmatex">\(10^{-6}\)</span> 以内。</p>
+</div>
+<details class="success">
+<summary>题解</summary>
+<p>首先，可以贪心地选随机变量，因为希望和尽可能大，所以优先选 <span class="arithmatex">\(p_i\)</span> 大的随机变量。</p>
+<p>将所有 <span class="arithmatex">\(p_i\)</span> 排完序后，最终答案一定是一段前缀。</p>
+<p>可以设计一个简单的 <span class="arithmatex">\(\text{DP}\)</span>，记 <span class="arithmatex">\(f_{i,j}\)</span> 为选长度为 <span class="arithmatex">\(i\)</span> 的前缀，和为 <span class="arithmatex">\(j\)</span> 的概率。</p>
+<p>每一次和只会 <span class="arithmatex">\(+1\)</span> 或者 <span class="arithmatex">\(-1\)</span>，则有转移式：</p>
+<div class="arithmatex">\[f_{i,j}=p_i \cdot f_{i-1,j-1} + (1-p_i) \cdot f_{i-1,j+1}\]</div>
+<p>这样做是 <span class="arithmatex">\(\Theta(n^2)\)</span> 的。</p>
+<p>考虑优化，令 <span class="arithmatex">\(\varepsilon\)</span> 为误差，我们断言，对于每一个 <span class="arithmatex">\(i\)</span>，使得 <span class="arithmatex">\(f_{i,j} &gt; \varepsilon\)</span> 的位置不会很多。</p>
+<p>转移时只需舍去 <span class="arithmatex">\(f_{i,j} \le \varepsilon\)</span> 的状态，精细实现即可通过本题。</p>
+<div class="admonition note">
+<p class="admonition-title">复杂度证明</p>
+<p>考虑对于每一个 <span class="arithmatex">\(i\)</span> 分析复杂度。事实上，事件 <span class="arithmatex">\(\{\)</span>所有随机变量取值为 <span class="arithmatex">\(-1\)</span> 或 <span class="arithmatex">\(1\)</span>，且和 <span class="arithmatex">\(\ge t\}\)</span> 等价于事件 <span class="arithmatex">\(\{\)</span>所有随机变量取值为 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>，且和 <span class="arithmatex">\(\ge \frac{i+t}{2}\}\)</span>，这样我们就把问题转化为了若干次的 <span class="arithmatex">\(\text{Bernoulli}\)</span> 分布，此时和的期望 <span class="arithmatex">\(\mu=\sum \limits_{k=1}^{i} p_i\)</span>。</p>
+<p>容易注意到的是，满足 <span class="arithmatex">\(f_{i,j} &gt; \varepsilon\)</span> 的 <span class="arithmatex">\(j\)</span> 应该是一段连续区间，不妨设这一段区间为 <span class="arithmatex">\(\big[(1-B_1)\mu,(1+B_2)\mu\big]\)</span>，且 <span class="arithmatex">\(B_1,B_2&gt;0\)</span>。</p>
+<p>代入 <span class="arithmatex">\(\text{Multiplicative Chernoff Bound}\)</span> 可以得到：</p>
+<div class="arithmatex">\[\textbf{Pr}\big(X \ge (1+B_2) \mu \big) \le e^{-\frac{B_2^2 \mu}{B_2+2}} \le \varepsilon\]</div>
+<div class="arithmatex">\[\textbf{Pr}\big(X \le (1-B_1) \mu \big) \le e^{-\frac{B_1^2 \mu}{2}} \le \varepsilon\]</div>
+<p>不等式两边同时取对数的相反数：</p>
+<div class="arithmatex">\[\frac{B_2^2 \mu}{B_2+2} \ge \ln \varepsilon^{-1}\]</div>
+<div class="arithmatex">\[\frac{B_1^2 \mu}{2} \ge \ln \varepsilon^{-1}\]</div>
+<p>解二次不等式组得：</p>
+<div class="arithmatex">\[B_2 \ge \frac{\ln \varepsilon^{-1} + \sqrt{\ln^2 \varepsilon^{-1}-8\mu \ln \varepsilon^{-1}}}{2\mu}\]</div>
+<div class="arithmatex">\[B_1 \ge \sqrt{\frac{2\ln \varepsilon^{-1}}{\mu}}\]</div>
+<p>舍去常数，由于 <span class="arithmatex">\(0 \le \mu \le i\)</span>，所以可以视为 <span class="arithmatex">\(n,\mu\)</span> 同阶，且 <span class="arithmatex">\(\ln \varepsilon^{-1}\)</span> 相对于 <span class="arithmatex">\(n\)</span> 是小量，所以：</p>
+<div class="arithmatex">\[B_1,B_2 \ge \sqrt{\frac{\ln \varepsilon^{-1}}{n}}\]</div>
+<p>取等号时最优，得到满足条件的区间为 <span class="arithmatex">\(\big[\mu - \sqrt{n \ln \varepsilon^{-1}},\mu + \sqrt{n \ln \varepsilon^{-1}}\big]\)</span>，即对于每个 <span class="arithmatex">\(i\)</span>，合法状态数为 <span class="arithmatex">\(\Theta(\sqrt{n \ln \varepsilon^{-1}})\)</span> 个。</p>
+<p>综上，总时间复杂度为 <span class="arithmatex">\(\Theta(n \sqrt{n \ln \varepsilon^{-1}})\)</span>。</p>
+<p>经过测试，实际 <span class="arithmatex">\(\varepsilon\)</span> 的值大约取到 <span class="arithmatex">\(10^{-11}\)</span>，此时总时间复杂度不超过 <span class="arithmatex">\(6 \times 10^7\)</span>。</p>
+</div>
+</details>
+<details class="example">
+<summary>核心代码</summary>
+<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mf">5e4</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="o">=</span><span class="mf">1e-11</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Junounly</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">K</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">K</span><span class="p">);</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="n">sort</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">p</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">greater</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">op</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="n">op</span><span class="o">^=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span><span class="o">:</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="p">])</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="n">X</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">y</span><span class="o">=</span><span class="n">Y</span><span class="o">*</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">y</span><span class="o">&gt;</span><span class="n">eps</span><span class="p">)</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">                </span><span class="n">x</span><span class="o">=</span><span class="n">X</span><span class="mi">-1</span><span class="p">;</span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">Y</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">y</span><span class="o">&lt;=</span><span class="n">eps</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">&amp;&amp;</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">][</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">].</span><span class="n">first</span><span class="o">==</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">                    </span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">][</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">].</span><span class="n">second</span><span class="o">+=</span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">                </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&amp;&amp;</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">][</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="mi">-2</span><span class="p">].</span><span class="n">first</span><span class="o">==</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">                    </span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">][</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="mi">-2</span><span class="p">].</span><span class="n">second</span><span class="o">+=</span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">                </span><span class="k">else</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">            </span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="p">].</span><span class="n">clear</span><span class="p">();</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">now</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">]</span><span class="o">:</span><span class="n">q</span><span class="p">[</span><span class="n">op</span><span class="o">^</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">X</span><span class="o">&gt;=</span><span class="n">K</span><span class="p">)</span><span class="w"> </span><span class="n">now</span><span class="o">+=</span><span class="n">Y</span><span class="p">;</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">            </span><span class="n">res</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">now</span><span class="p">);</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.11lf</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">res</span><span class="p">);</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</details>
+<ul>
+<li>
+<h4 id="luogu-p7606">luogu P7606</h4>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">题目链接</p>
+<p><a href="https://www.luogu.com.cn/problem/P7606">P7606 [THUPC 2021] 混乱邪恶</a></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">简要题意</p>
+<p>初始有两个变量 <span class="arithmatex">\(L=G=0\)</span>。有一个蜂窝状网格，从原点出发，一共要走 <span class="arithmatex">\(n\)</span> 步，每步可以从 <span class="arithmatex">\(6\)</span> 个方向中任选一个，并朝该方向走 <span class="arithmatex">\(1\)</span> 单位长度，假设第 <span class="arithmatex">\(i\)</span> 步选择了第 <span class="arithmatex">\(j\)</span> 个方向，<span class="arithmatex">\(L\)</span> 和 <span class="arithmatex">\(G\)</span> 分别会变成 <span class="arithmatex">\((L+a_{i,2j-1}) \bmod p\)</span> 和 <span class="arithmatex">\((G+a_{i,2j}) \bmod p\)</span>，问走 <span class="arithmatex">\(n\)</span> 步后回到原点，且此时 <span class="arithmatex">\(L=L^{\ast},G=G^{\ast}\)</span> 的可行性。</p>
+<p><span class="arithmatex">\(1 \le n,p \le 100\)</span>。</p>
+</div>
+<details class="success">
+<summary>题解</summary>
+<p>发现蜂窝状网格性质不太好，而网格的形状不影响最终答案，所以进行变换，表示为直角三角形网格，如下图：</p>
+<p><img alt="" src="https://cdn.luogu.com.cn/upload/image_hosting/28tr35ly.png" /></p>
+<p>注意到 <span class="arithmatex">\(p\)</span> 很小，考虑设计一个暴力 <span class="arithmatex">\(\text{DP}\)</span>，设 <span class="arithmatex">\(f_{i,l,g,j,k} = 0/1\)</span> 表示走到第 <span class="arithmatex">\(i\)</span> 步，坐标为 <span class="arithmatex">\((j,k)\)</span>，此时 <span class="arithmatex">\(L=l , G=g\)</span> 的可行性。</p>
+<p>则转移式为：</p>
+<div class="arithmatex">\[f_{i,l,g,j,k} = \bigvee \limits_{p=1}^{6} f_{i-1,(l-a_{i,2p-1}+p)\bmod p,(g-a_{i,2p}+p)\bmod p,j+dx_p,k+dy_p}\]</div>
+<p>其中 <span class="arithmatex">\(dx=\{0,1,1,0,-1,-1\},dy=\{-1,0,1,1,0,-1\}\)</span>，分别表示对应方向 <span class="arithmatex">\(\text{x}\)</span> 坐标与 <span class="arithmatex">\(\text{y}\)</span> 坐标的增量。为避免越界，全部坐标都要加上一个偏移量。</p>
+<p>考虑优化空间，第一维可以用滚动数组去掉。</p>
+<p>注意到转移方式是整体可行性平移，然后合并，所以可以用 <span class="arithmatex">\(\text{bitset}\)</span> 优化。</p>
+<p>此时的时间复杂度为 <span class="arithmatex">\(\Theta(\frac{n^3 p^2}{\omega})\)</span>，空间复杂度为 <span class="arithmatex">\(\Theta(\frac{n^2 p^2}{\omega})\)</span>。</p>
+<p>注意到，我们最终的答案只与加和有关，与顺序无关，可以任意乱序。</p>
+<p>于是就可以转化为一个随机游走模型，考虑将序列 <span class="arithmatex">\(a\)</span> 随机打乱，我们断言这样答案路径中距离原点最远的 <span class="arithmatex">\(j,k\)</span> 大概率不会很大。</p>
+<p>接下来给出对于 <span class="arithmatex">\(j,k\)</span> 取值范围的分析。</p>
+<p>考虑 <span class="arithmatex">\(\text{x}\)</span> 坐标 <span class="arithmatex">\(j\)</span>，最劣情况下，会有 <span class="arithmatex">\(n\)</span> 步对 <span class="arithmatex">\(\text{x}\)</span> 坐标产生改动。</p>
+<p>每一个坐标被改动的概率是相同的，考虑去掉改动为 <span class="arithmatex">\(0\)</span> 的位置，剩下有 <span class="arithmatex">\(i\)</span> 个位置，就是值为 <span class="arithmatex">\(-1\)</span> 或 <span class="arithmatex">\(1\)</span> 的二项分布。</p>
+<p>同理，事件 <span class="arithmatex">\(\{\)</span>所有随机变量取值为 <span class="arithmatex">\(-1\)</span> 或 <span class="arithmatex">\(1\)</span>，且和为 <span class="arithmatex">\(j\}\)</span> 等价于事件 <span class="arithmatex">\(\{\)</span>所有随机变量取值为 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>，且和为 <span class="arithmatex">\(\frac{i+j}{2}\}\)</span>。</p>
+<p>这样我们就把问题转化为了若干次的 <span class="arithmatex">\(\text{Bernoulli}\)</span> 分布。记随机变量 <span class="arithmatex">\(X\)</span> 反映 <span class="arithmatex">\(\frac{i+j}{2}\)</span> 的取值，且 <span class="arithmatex">\(X\)</span> 的期望值为 <span class="arithmatex">\(\mu=iP\)</span>，其中 <span class="arithmatex">\(P\)</span> 为单个随机变量取 <span class="arithmatex">\(1\)</span> 的概率，为 <span class="arithmatex">\(\frac{1}{2}\)</span>。</p>
+<p>这个模型弱于上一题的模型，套用得满足条件的区间为 <span class="arithmatex">\(X \in \big[\mu - \sqrt{n \ln \varepsilon^{-1}},\mu + \sqrt{n \ln \varepsilon^{-1}}\big]\)</span>，代入 <span class="arithmatex">\(j=2X-i\)</span>，舍弃常数，得：</p>
+<p>算法成功概率为 <span class="arithmatex">\(1-\varepsilon\)</span> 时，</p>
+<div class="arithmatex">\[-\sqrt{n \ln \varepsilon^{-1}} \le j \le \sqrt{n \ln \varepsilon^{-1}}\]</div>
+<p>同时考虑 <span class="arithmatex">\(\text{y}\)</span> 坐标 <span class="arithmatex">\(k\)</span> ，即算法成功概率为 <span class="arithmatex">\((1-\varepsilon)^2\)</span> 时，</p>
+<div class="arithmatex">\[-\sqrt{n \ln \varepsilon^{-1}} \le j,k \le \sqrt{n \ln \varepsilon^{-1}}\]</div>
+<p>最终的时间复杂度为 <span class="arithmatex">\(\Theta(\frac{n^2 p^2 \ln \varepsilon^{-1}}{\omega})\)</span>，空间复杂度为 <span class="arithmatex">\(\Theta(\frac{n p^2 \ln \varepsilon^{-1}}{\omega})\)</span>。</p>
+<p>这题轻微卡常，所以要加取模优化，实际可以取 <span class="arithmatex">\(j,k\)</span> 的范围为 <span class="arithmatex">\([-20,20]\)</span>，经测试，正确率非常高。</p>
+</details>
+<details class="example">
+<summary>核心代码</summary>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span><span class="n">B</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Junounly</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="n">mod</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="mi">15</span><span class="p">];</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">random_device</span><span class="w"> </span><span class="n">rd</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">mt19937</span><span class="w"> </span><span class="nf">rnd</span><span class="p">(</span><span class="n">rd</span><span class="p">());</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">bitset</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">N</span><span class="p">][</span><span class="n">N</span><span class="p">][</span><span class="n">M</span><span class="p">];</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="cp">#define T(x,y) ((x)&gt;=y?(x)-(y):(x)-(y)+mod)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">mod</span><span class="p">);</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="mi">12</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">L</span><span class="p">,</span><span class="o">&amp;</span><span class="n">G</span><span class="p">);</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="n">shuffle</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">rnd</span><span class="p">);</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">B</span><span class="p">][</span><span class="n">B</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">l</span><span class="o">&lt;</span><span class="n">mod</span><span class="p">;</span><span class="n">l</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">g</span><span class="o">&lt;</span><span class="n">mod</span><span class="p">;</span><span class="n">g</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">B</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">                    </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">g</span><span class="p">][</span><span class="n">j</span><span class="p">].</span><span class="n">reset</span><span class="p">();</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">                    </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">g</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">|=</span><span class="n">f</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">T</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])][</span><span class="n">T</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">])][</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">                    </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">g</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">|=</span><span class="n">f</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">T</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">])][</span><span class="n">T</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">4</span><span class="p">])][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">                    </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">g</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">|=</span><span class="n">f</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">T</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">5</span><span class="p">])][</span><span class="n">T</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">6</span><span class="p">])][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">                    </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">g</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">|=</span><span class="n">f</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">T</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">7</span><span class="p">])][</span><span class="n">T</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">8</span><span class="p">])][</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">                    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">                    </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">g</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">|=</span><span class="n">f</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">T</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">9</span><span class="p">])][</span><span class="n">T</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">10</span><span class="p">])][</span><span class="n">j</span><span class="mi">-1</span><span class="p">];</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">                    </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">g</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">|=</span><span class="n">f</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">T</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">11</span><span class="p">])][</span><span class="n">T</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">12</span><span class="p">])][</span><span class="n">j</span><span class="mi">-1</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">][</span><span class="n">L</span><span class="p">][</span><span class="n">G</span><span class="p">][</span><span class="n">B</span><span class="p">][</span><span class="n">B</span><span class="p">]</span><span class="o">?</span><span class="s">&quot;Chaotic Evil</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">:</span><span class="s">&quot;Not a true problem setter</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
