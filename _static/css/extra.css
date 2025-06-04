@@ -1,0 +1,16 @@
+/* Code font size in <details> */
+details .linenos, details code {
+  font-size: inherit !important;
+}
+
+/* Code block / tab in details */
+details > summary + .highlight, details > summary + .tabbed-set { margin: 0 -0.6rem !important; }
+details > summary + .highlight > .highlighttable { margin: 0 !important; }
+
+/* Table full width */
+.md-typeset__table { display: block !important; }
+.md-typeset table:not(.highlighttable) { display: table !important; }
+
+.md-typeset table:not([class]) th {
+    min-width: 0rem;
+}
